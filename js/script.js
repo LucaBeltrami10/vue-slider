@@ -32,6 +32,12 @@ createApp({
     },
 
     methods: {
-        
+        nexImage(){
+            if(this.activeIndex > this.slides.lenght){
+                return activeIndex = 0
+            }
+            return this.activeIndex++
+        }
+
     }
 }) .mount('#app');
