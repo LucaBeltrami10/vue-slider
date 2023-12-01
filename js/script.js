@@ -34,7 +34,7 @@ createApp({
     methods: {
         nextImage(){
             console.log(this.slides.length)
-            if(this.activeIndex > this.slides.length - 1){
+            if(this.activeIndex >= (this.slides.length - 1)){
                 return this.activeIndex = 0;
             }
             return this.activeIndex += 1;
