@@ -42,27 +42,28 @@ createApp({
             }
             return this.activeIndex += 1;
         },
+
         prevImage(){
             if(this.activeIndex == 0 ){
                 return this.activeIndex = (this.slides.length - 1);
             }
             return this.activeIndex -= 1;
         },
+
         activeClass(indexArray, activeIndex){
             return (indexArray == activeIndex) ? 'active' : '';
         },
+
         showImage(indexArray){
             return this.activeIndex = indexArray;
         },
+        
         setAutoPlay(status){
             if(this.autoPlay === status){
             this.clock = setInterval(this.nextImage, 3000);
             }else{
                 clearInterval(this.clock);
             }
-        },
-        ciao(){
-            console.log('ciao')
         }
     },
 
