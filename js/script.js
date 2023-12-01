@@ -49,6 +49,9 @@ createApp({
         autoplay(){
             setInterval(this.nextImage, 3000);
         },
+        activeClass(indexArray, activeIndex){
+            return (indexArray == activeIndex) ? 'active' : '';
+        }
 
     }
 }) .mount('#app');
