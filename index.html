@@ -29,8 +29,8 @@
                 <div class="thumbs">
                     <div class="prev"></div>
                     <div class="next"></div>
-                    <div class="thumb active">
-                        <img src="img/01.webp" alt="Svezia" />
+                    <div v-for="(miniatures,index) in slides" class="thumb" :class="(index == activeIndex) ? 'active' : ''">
+                        <img :src="miniatures.image" :alt="miniatures.title" />
                     </div>
                 </div>
 
