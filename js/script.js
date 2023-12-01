@@ -34,14 +34,12 @@ createApp({
 
     methods: {
         nextImage(){
-            console.log(this.slides.length)
             if(this.activeIndex >= (this.slides.length - 1)){
                 return this.activeIndex = 0;
             }
             return this.activeIndex += 1;
         },
         prevImage(){
-            console.log(this.slides.length)
             if(this.activeIndex == 0 ){
                 return this.activeIndex = (this.slides.length - 1);
             }
@@ -53,18 +51,17 @@ createApp({
         showImage(indexArray){
             return this.activeIndex = indexArray;
         },
-        autoPlay(){
+        setAutoPlay(){
             if(this.autoPlay === true){
-            const clock = setInterval(this.nextImage, 3000);
+            setInterval(this.nextImage, 3000);
             }else{
                 clearInterval(clock);
             }
         }
-        
-
     },
 
     beforeMount(){
-        this.autoPlay();
+        console.log(this.setAutoPlay)
+        this.setAutoPlay();
     },
 }) .mount('#app');
