@@ -45,7 +45,10 @@ createApp({
                 return this.activeIndex = (this.slides.length - 1);
             }
             return this.activeIndex -= 1;
-        }
+        },
+        autoplay(){
+            setInterval(this.nextImage, 3000);
+        },
 
     }
 }) .mount('#app');
