@@ -51,6 +51,9 @@ createApp({
         },
         activeClass(indexArray, activeIndex){
             return (indexArray == activeIndex) ? 'active' : '';
+        },
+        showImage(indexArray){
+            return this.activeIndex = indexArray;
         }
 
     }
