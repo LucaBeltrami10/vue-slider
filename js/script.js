@@ -53,10 +53,18 @@ createApp({
         showImage(indexArray){
             return this.activeIndex = indexArray;
         },
+        autoPlay(){
+            if(this.autoPlay === true){
+            const clock = setInterval(this.nextImage, 3000);
+            }else{
+                clearInterval(clock);
+            }
+        }
         
 
     },
+
     beforeMount(){
-        setInterval(this.nextImage, 3000);
+        autoPlay();
     },
 }) .mount('#app');
