@@ -28,6 +28,9 @@ createApp({
             ],
             activeIndex : 0,
             autoPlay : true,
+            true : true,
+            false : false,
+            clock : '',
 
         }
     },
@@ -51,17 +54,19 @@ createApp({
         showImage(indexArray){
             return this.activeIndex = indexArray;
         },
-        setAutoPlay(){
-            if(this.autoPlay === true){
-            setInterval(this.nextImage, 3000);
+        setAutoPlay(status){
+            if(this.autoPlay === status){
+            this.clock = setInterval(this.nextImage, 3000);
             }else{
-                clearInterval(clock);
+                clearInterval(this.clock);
             }
+        },
+        ciao(){
+            console.log('ciao')
         }
     },
 
-    beforeMount(){
-        console.log(this.setAutoPlay)
-        this.setAutoPlay();
+    mounted(){
+        this.setAutoPlay(this.true);
     },
 }) .mount('#app');
