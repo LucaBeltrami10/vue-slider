@@ -27,6 +27,7 @@ createApp({
                 }
             ],
             activeIndex : 0,
+            autoPlay : true,
 
         }
     },
