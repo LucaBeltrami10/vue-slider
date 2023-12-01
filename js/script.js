@@ -47,15 +47,16 @@ createApp({
             }
             return this.activeIndex -= 1;
         },
-        autoplay(){
-            setInterval(this.nextImage, 3000);
-        },
         activeClass(indexArray, activeIndex){
             return (indexArray == activeIndex) ? 'active' : '';
         },
         showImage(indexArray){
             return this.activeIndex = indexArray;
-        }
+        },
+        
 
-    }
+    },
+    beforeMount(){
+        setInterval(this.nextImage, 3000);
+    },
 }) .mount('#app');
